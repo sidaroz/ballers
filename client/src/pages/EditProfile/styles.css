@@ -1,0 +1,11 @@
+.profile-image {
+  background-color: royalblue;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.bio-edit {
+  min-width: 300px;
+  min-height: 150px;
+}

@@ -1,0 +1,39 @@
+.navbar-grid {
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(89, 65, 225);
+  justify-content: space-between;
+  padding: 10px 10px;
+}
+
+.navbar-profile {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: royalblue;
+}
+
+.logo {
+  padding-top: 5px;
+}
+
+.hidden {
+  display: none;
+}
+
+.user-info {
+  background-color: salmon;
+  text-align: center;
+  max-width: 75%;
+  margin-inline: auto;
+  border-radius: 10px;
+}
+
+.top-info {
+  padding-top: 5px;
+}
+
+.bottom-info {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
