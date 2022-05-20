@@ -14,6 +14,7 @@
   border-radius: 10px;
   max-width: 80%;
   margin-inline: auto;
+  margin-top: 10px;
 }
 
 .join-game {
@@ -25,7 +26,7 @@
 
 .filter-grid {
   display: grid;
-  max-width: 50%;
+  max-width: 70%;
   margin-inline: auto;
   margin-bottom: 10px;
 }
