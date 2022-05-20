@@ -1,0 +1,39 @@
+.create-session-form {
+  max-width: 80%;
+  margin-inline: auto;
+}
+
+select {
+  max-width: 40%;
+  margin-inline: auto;
+}
+
+.info-grid {
+  display: grid;
+}
+
+.time-input {
+  max-width: 50%;
+  margin-inline: auto;
+}
+
+.players-input {
+  max-width: 50%;
+  margin-inline: auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+label {
+  margin-top: 3px;
+}
+
+.whole-form {
+  text-align: center;
+}
+
+.session-btn {
+  margin-top: 10px;
+}

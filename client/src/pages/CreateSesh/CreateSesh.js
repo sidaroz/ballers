@@ -1,27 +1,14 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import "./styles.css";
 
-function Home() {
-  function filterHandler() {
-    const filterGame = document.querySelector(".filter-grid");
-    filterGame.classList.toggle("hidden");
-  }
-
-  const naviagate = useNavigate();
+function CreateSesh() {
   return (
     <>
       <Navbar />
-      <div className="edit-grid">
-        <h2 onClick={filterHandler}>Filter</h2>
-        <button onClick={() => naviagate("/create-session")}>
-          + Make Sesh
-        </button>
-      </div>
-
-      <div className="filter-grid hidden">
-        <form>
+      <h1>Create a Sesh!</h1>
+      <div className="whole-form">
+        <form className="create-session-form">
           <div className="labels">
             <label for="Area">Area:</label>
             <select name="Area" placeholder="Area">
@@ -40,22 +27,26 @@ function Home() {
               <option value="Advanced">Advanced</option>
             </select>
           </div>
-          <button className="search-btn">Search</button>
-        </form>
-      </div>
 
-      <div className="game-info">
-        <div>
-          <h2>Username</h2>
-          <h2>Time: 5:00pm</h2>
-        </div>
-        <h2>Area: North London</h2>
-        <h2>Difficulty: Beginner</h2>
-        <h2>Players Needed: 1</h2>
-        <button className="join-game">Join</button>
+          <div className="info-grid">
+            <div className="labels">
+              <label for="time">Time of the session:</label>
+              <input type="text" name="time" className="time-input" />
+            </div>
+            <div className="labels">
+              <label for="players">Players Needed:</label>
+              <input type="number" className="players-input" name="players" />
+            </div>
+            <div className="labels">
+              <label for="description">Brief description of session:</label>
+              <textarea name="description" rows="4" cols="40" />
+            </div>
+          </div>
+          <button className="session-btn">Create Session</button>
+        </form>
       </div>
     </>
   );
 }
 
-export default Home;
+export default CreateSesh;

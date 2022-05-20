@@ -11,7 +11,9 @@ function Navbar() {
   return (
     <>
       <div className="navbar-grid">
-        <h1 className="logo">Ballers</h1>
+        <h1 className="logo" onClick={() => navigate("/home")}>
+          Ballers
+        </h1>
         <div className="navbar-profile" onClick={profileClick}></div>
       </div>
       <div className="user-info hidden">
