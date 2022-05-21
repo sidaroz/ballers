@@ -1,6 +1,7 @@
 .single-game {
   margin-top: 30%;
-  min-width: 90%;
+  max-width: 90%;
+  margin-inline: auto;
 }
 
 .player-username {
@@ -25,4 +26,18 @@
 
 .single-players-needed {
   font-size: 20px;
+}
+
+.single-join-btn {
+  margin-top: 10px;
+}
+
+.single-chat-btn {
+  margin-top: 10px;
+}
+.button-grid {
+  max-width: 15%;
+  display: flex;
+  flex-direction: column;
+  margin-inline: auto;
 }

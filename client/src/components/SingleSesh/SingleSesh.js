@@ -28,7 +28,7 @@ function SingleSesh() {
   return (
     <>
       <Navbar />
-      <div className={`game-info single-game ${data.posts.id}`}>
+      <div className={`single-game ${data.posts.id}`}>
         <div>
           <h2 className="player-username">{data.posts.player}</h2>
           <h2 className="single-time">Time: {data.posts.time}</h2>
@@ -43,7 +43,12 @@ function SingleSesh() {
         <h2 className="single-description">
           Description: {data.posts.description}
         </h2>
-        <button className={`join-game ${data.posts.id}`}>Join</button>
+        <div className="button-grid">
+          <button className={`single-join-btn ${data.posts.id}`}>Join</button>
+          <button className={`single-chat-btn chat-${data.posts.id}`}>
+            Chat
+          </button>
+        </div>
       </div>
     </>
   );
