@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import "./styles.css";
 
@@ -81,16 +81,18 @@ function Home() {
             session.area = "South London";
           }
           return (
-            <div className={`game-info ${i}`}>
-              <div>
-                <h2>{session.player}</h2>
-                <h2>Time: {session.time}</h2>
+            <Link to={`/session/${i + 1}`}>
+              <div className={`game-info ${i + 1}`}>
+                <div>
+                  <h2>{session.player}</h2>
+                  <h2>Time: {session.time}</h2>
+                </div>
+                <h2>Area: {session.area}</h2>
+                <h2>Difficulty: {session.difficulty}</h2>
+                <h2>Players Needed: {session.players_needed}</h2>
+                <button className={`join-game ${i + 1}`}>Join</button>
               </div>
-              <h2>Area: {session.area}</h2>
-              <h2>Difficulty: {session.difficulty}</h2>
-              <h2>Players Needed: {session.players_needed}</h2>
-              <button className={`join-game ${i}`}>Join</button>
-            </div>
+            </Link>
           );
         })}
       </>

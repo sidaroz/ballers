@@ -1,0 +1,28 @@
+.single-game {
+  margin-top: 30%;
+  min-width: 90%;
+}
+
+.player-username {
+  font-size: 25px;
+}
+
+.single-time {
+  font-size: 20px;
+}
+
+.single-area {
+  font-size: 20px;
+}
+
+.single-difficulty {
+  font-size: 20px;
+}
+
+.single-description {
+  font-size: 20px;
+}
+
+.single-players-needed {
+  font-size: 20px;
+}
