@@ -1,6 +1,6 @@
 from django.db import models
-from django.contrib.auth.models import User
 from django.utils import timezone
+from django.conf import settings
 
 class Area(models.Model):
     options = (
@@ -30,7 +30,7 @@ class Post(models.Model):
     description = models.TextField(unique_for_date='published')
     published = models.DateTimeField(default=timezone.now)
     player = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name='sesh_post'
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='sesh_post'
     )
 
     class Meta:

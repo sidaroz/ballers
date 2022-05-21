@@ -1,9 +1,19 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import axiosInstance from "../../axios";
 import "./styles.css";
 
 function Navbar() {
   const navigate = useNavigate();
+  const logOutHandler = () => {
+    const response = axiosInstance.post("user/logout/blacklist/", {
+      refresh_token: localStorage.getItem("refresh_token"),
+    });
+    localStorage.removeItem("access_token");
+    localStorage.removeItem("refresh_token");
+    axiosInstance.defaults.headers["Authorization"] = null;
+    navigate("/");
+  };
   function profileClick() {
     const infoBox = document.querySelector(".user-info");
     infoBox.classList.toggle("hidden");
@@ -20,7 +30,7 @@ function Navbar() {
         <h3 className="top-info" onClick={() => navigate("/view-profile")}>
           View Profile
         </h3>
-        <h3 className="bottom-info" onClick={() => navigate("/")}>
+        <h3 className="bottom-info" onClick={logOutHandler}>
           Sign Out
         </h3>
       </div>
