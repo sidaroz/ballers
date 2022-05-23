@@ -2,17 +2,17 @@ from django.db import models
 from django.utils import timezone
 from django.conf import settings
 
-class Area(models.Model):
-    options = (
-        ('North London', 'North London'),
-        ('West London', 'West London'),
-        ('South London', 'South London'),
-        ('East London', 'East London')
-    )
-    name = models.CharField(choices=options, max_length=50)
+# class Area(models.Model):
+#     options2 = (
+#         ('North London', 'North London'),
+#         ('West London', 'West London'),
+#         ('South London', 'South London'),
+#         ('East London', 'East London')
+#     )
+#     name = models.CharField(choices=options2, max_length=50)
 
-    def __str__(self):
-        return self.name
+#     def __str__(self):
+#         return self.name
 
 
 class Post(models.Model):
@@ -22,8 +22,13 @@ class Post(models.Model):
         ('Intermediate', 'Intermediate'),
         ('Advanced', 'Advanced')
     )
-    area = models.ForeignKey(
-        Area, on_delete=models.PROTECT, default=1)
+    options2 = (
+        ('North London', 'North London'),
+        ('West London', 'West London'),
+        ('South London', 'South London'),
+        ('East London', 'East London')
+    )
+    area = models.CharField(choices=options2, max_length=50)
     difficulty = models.CharField(max_length=50, choices=options, default='Beginner')
     time = models.CharField(max_length=5)
     players_needed = models.CharField(max_length=1)

@@ -2,11 +2,13 @@ from email import message
 from rest_framework import generics 
 from sesh.models import Post
 from .serializers import PostSerializer
-from rest_framework.permissions import SAFE_METHODS, BasePermission, IsAdminUser, DjangoModelPermissionsOrAnonReadOnly, IsAuthenticated
+from rest_framework.permissions import SAFE_METHODS, BasePermission, IsAdminUser, DjangoModelPermissionsOrAnonReadOnly, IsAuthenticated, AllowAny
 from rest_framework import viewsets
 from rest_framework import filters
 from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
+from django_filters.rest_framework import DjangoFilterBackend
+import django_filters
 
 class PostUserWritePermission(BasePermission):
     message = 'Editing posts is restricted to the creator of this session.'
@@ -18,17 +20,56 @@ class PostUserWritePermission(BasePermission):
 
         return obj.player == request.user
 
-class PostList(viewsets.ModelViewSet):
-    permission_classes = [PostUserWritePermission]
+
+class PostList(generics.ListCreateAPIView):
+    permission_classes = [AllowAny]
     serializer_class = PostSerializer
 
-    def get_object(self, queryset=None, **kwargs):
-        item = self.kwargs.get('pk')
-        #CHANGE id=item to any other parameter you would want to search for
-        return get_object_or_404(Post, id=item)
-
     def get_queryset(self):
+        user = self.request.user
         return Post.objects.all()
+
+class PostDetail(generics.RetrieveUpdateAPIView):
+    permission_classes = [IsAuthenticated]
+    serializer_class = PostSerializer
+
+    # def get_queryset(self):
+    #     id = self.request.query_params.get('id', None)
+    #     print(id)
+    #     return Post.objects.filter(id=id)
+    def get_queryset(self):
+        id = self.kwargs['pk']
+        print(id)
+        return Post.objects.filter(id=id)
+
+class PostDelete(generics.RetrieveUpdateDestroyAPIView):
+    permission_classes = [PostUserWritePermission]
+    serializer_class = PostSerializer
+    def get_queryset(self):
+        id = self.kwargs['pk']
+        print(id)
+        return Post.objects.delete(id=id)
+
+class PostListDetailfilter(generics.ListAPIView):
+   queryset = Post.objects.all()
+   serializer_class = PostSerializer
+   filter_backends = [filters.SearchFilter]
+   search_fields = ['^area', '=difficulty']
+
+
+
+# THIS WORKS
+# class PostList(viewsets.ModelViewSet):
+#     permission_classes = [PostUserWritePermission]
+#     serializer_class = PostSerializer
+
+#     def get_object(self, queryset=None, **kwargs):
+#         item = self.kwargs.get('pk')
+#         #CHANGE id=item to any other parameter you would want to search for
+#         return get_object_or_404(Post, id=item)
+
+#     def get_queryset(self):
+#         return Post.objects.all()
 
 
 # class PostList(viewsets.ViewSet):

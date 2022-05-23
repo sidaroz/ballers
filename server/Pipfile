@@ -9,6 +9,10 @@ coverage = "*"
 djangorestframework = "*"
 django-cors-headers = "*"
 djangorestframework-simplejwt = "*"
+pyyaml = "*"
+uritemplate = "*"
+coreapi = "*"
+django-filter = "*"
 
 [dev-packages]
 

@@ -16,15 +16,6 @@ function SingleSesh() {
     });
   }, [setData]);
 
-  if (data.posts.area === 1) {
-    data.posts.area = "North London";
-  } else if (data.posts.area === 2) {
-    data.posts.area = "West London";
-  } else if (data.posts.area === 3) {
-    data.posts.area = "East London";
-  } else if (data.posts.area === 4) {
-    data.posts.area = "South London";
-  }
   return (
     <>
       <Navbar />

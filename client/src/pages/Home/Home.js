@@ -15,23 +15,40 @@ function Home() {
       const resp = await data.json();
       setSessions(resp);
       setLoading(false);
+      setArea("North");
+      setDifficulty("Beginner");
     }
     fetchSessions();
-  }, []);
+  }, [setSessions]);
 
+  //FOR FILTER
+  const [area, setArea] = useState("");
+  const [difficulty, setDifficulty] = useState("");
+
+  function filterSearch(e) {
+    e.preventDefault();
+    navigate(`search/${area}/${difficulty}`);
+  }
+  function filterChange() {
+    const areaFilter = document.querySelector(".area-filter");
+    const difficultyFilter = document.querySelector(".difficulty-filter");
+    const areaNeeded = areaFilter.value.split(" ")[0];
+    setArea(areaNeeded);
+    setDifficulty(difficultyFilter.value);
+  }
   function filterHandler() {
     const filterGame = document.querySelector(".filter-grid");
     filterGame.classList.toggle("hidden");
   }
 
-  const naviagate = useNavigate();
+  const navigate = useNavigate();
   if (!loading) {
     return (
       <>
         <Navbar />
         <div className="edit-grid">
           <h2 onClick={filterHandler}>Filter</h2>
-          <button onClick={() => naviagate("/create-session")}>
+          <button onClick={() => navigate("/create-session")}>
             + Make Sesh
           </button>
         </div>
@@ -40,7 +57,12 @@ function Home() {
           <form>
             <div className="labels">
               <label for="Area">Area:</label>
-              <select name="Area" placeholder="Area">
+              <select
+                name="Area"
+                placeholder="Area"
+                className="area-filter"
+                onChange={filterChange}
+              >
                 <option value="North London">North London</option>
                 <option value="West London">West London</option>
                 <option value="East London">East London</option>
@@ -50,13 +72,19 @@ function Home() {
 
             <div className="labels">
               <label for="Difficulty">Difficulty:</label>
-              <select name="Difficulty">
+              <select
+                name="Difficulty"
+                className="difficulty-filter"
+                onChange={filterChange}
+              >
                 <option value="Beginner">Beginner</option>
                 <option value="Intermediate">Intermediate</option>
                 <option value="Advanced">Advanced</option>
               </select>
             </div>
-            <button className="search-btn">Search</button>
+            <button className="search-btn" onClick={filterSearch}>
+              Search
+            </button>
           </form>
         </div>
 
@@ -71,15 +99,6 @@ function Home() {
           <button className="join-game">Join</button>
         </div>
         {sessions.map((session, i) => {
-          if (session.area === 1) {
-            session.area = "North London";
-          } else if (session.area === 2) {
-            session.area = "West London";
-          } else if (session.area === 3) {
-            session.area = "East London";
-          } else if (session.area === 4) {
-            session.area = "South London";
-          }
           return (
             <Link to={`/session/${i + 1}`}>
               <div className={`game-info ${i + 1}`}>
