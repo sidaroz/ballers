@@ -31,7 +31,9 @@
 .single-join-btn {
   margin-top: 10px;
 }
-
+.single-delete-btn {
+  margin-top: 10px;
+}
 .single-chat-btn {
   margin-top: 10px;
 }
@@ -40,4 +42,8 @@
   display: flex;
   flex-direction: column;
   margin-inline: auto;
+}
+
+.hidden {
+  display: none;
 }

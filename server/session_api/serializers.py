@@ -9,7 +9,7 @@ class PostSerializer(serializers.ModelSerializer):
 
     def to_representation(self, instance):
         ret = super().to_representation(instance)
-        ret['player'] =  instance.player.user_name
+        ret['player'] =  {'username': instance.player.user_name, 'id': instance.player.id}
         return ret
 
 class UpdateSerializer(serializers.ModelSerializer):

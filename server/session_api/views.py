@@ -72,9 +72,12 @@ class EditPost(generics.RetrieveUpdateAPIView):
 
 
 class DeletePost(generics.RetrieveDestroyAPIView):
-    permission_classes = [PostUserWritePermission]
+    permission_classes = [AllowAny]
     serializer_class = PostSerializer
-    queryset = Post.objects.all()
+    def get_queryset(self):
+        id = self.kwargs['pk']
+        print(id)
+        return Post.objects.filter(id=id)
 
 # THIS WORKS
 # class PostList(viewsets.ModelViewSet):
