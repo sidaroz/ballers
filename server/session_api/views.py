@@ -20,7 +20,6 @@ class PostUserWritePermission(BasePermission):
 
         return obj.player == request.user
 
-
 class PostList(generics.ListCreateAPIView):
     permission_classes = [AllowAny]
     serializer_class = PostSerializer
@@ -42,13 +41,13 @@ class PostDetail(generics.RetrieveUpdateAPIView):
         print(id)
         return Post.objects.filter(id=id)
 
-class PostDelete(generics.RetrieveUpdateDestroyAPIView):
-    permission_classes = [PostUserWritePermission]
-    serializer_class = PostSerializer
-    def get_queryset(self):
-        id = self.kwargs['pk']
-        print(id)
-        return Post.objects.delete(id=id)
+# class PostDelete(generics.RetrieveUpdateDestroyAPIView):
+#     permission_classes = [PostUserWritePermission]
+#     serializer_class = PostSerializer
+#     def get_queryset(self):
+#         id = self.kwargs['pk']
+#         print(id)
+#         return Post.objects.delete(id=id)
 
 class PostListDetailfilter(generics.ListAPIView):
    queryset = Post.objects.all()
@@ -56,7 +55,21 @@ class PostListDetailfilter(generics.ListAPIView):
    filter_backends = [filters.SearchFilter]
    search_fields = ['^area', '=difficulty']
 
+#POST
+class CreatePost(generics.CreateAPIView):
+    permission_classes = [AllowAny]
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
 
+class EditPost(generics.UpdateAPIView):
+    permission_classes = [IsAuthenticated]
+    serializer_class = PostSerializer
+    queryset = Post.objects.all()
+
+class DeletePost(generics.RetrieveDestroyAPIView):
+    permission_classes = [PostUserWritePermission]
+    serializer_class = PostSerializer
+    queryset = Post.objects.all()
 
 # THIS WORKS
 # class PostList(viewsets.ModelViewSet):

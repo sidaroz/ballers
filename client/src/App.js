@@ -7,7 +7,7 @@ import ViewProfile from "./pages/ViewProfile/ViewProfile";
 import Home from "./pages/Home/Home";
 import CreateSesh from "./pages/CreateSesh/CreateSesh";
 import SingleSesh from "./components/SingleSesh/SingleSesh";
-import Filter from "./components/Filter/Filter";
+import Filter from "./pages/FilterPage/FilterPage";
 
 function App() {
   return (

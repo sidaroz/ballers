@@ -42,7 +42,7 @@ class NewUser(AbstractBaseUser, PermissionsMixin):
     objects = CustomAccountManager()
 
     USERNAME_FIELD = 'user_name'
-    REQUIRED_FIELDS = ['email']
+    REQUIRED_FIELDS = ['email', 'id']
 
     def __str__(self):
         return self.user_name

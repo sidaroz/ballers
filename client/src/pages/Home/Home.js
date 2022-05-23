@@ -100,8 +100,8 @@ function Home() {
         </div>
         {sessions.map((session, i) => {
           return (
-            <Link to={`/session/${i + 1}`}>
-              <div className={`game-info ${i + 1}`}>
+            <Link to={`/session/${session.id}`}>
+              <div className={`game-info ${session.id}`}>
                 <div>
                   <h2>{session.player}</h2>
                   <h2>Time: {session.time}</h2>
