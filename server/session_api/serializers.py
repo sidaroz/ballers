@@ -11,3 +11,8 @@ class PostSerializer(serializers.ModelSerializer):
         ret = super().to_representation(instance)
         ret['player'] =  instance.player.user_name
         return ret
+
+class UpdateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Post
+        fields = ('id', 'area', 'difficulty', 'time', 'players_needed', 'description', 'player')

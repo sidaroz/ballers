@@ -16,6 +16,34 @@ function SingleSesh() {
     });
   }, [setData]);
 
+  const [userData, setUserData] = useState({ username: "" });
+  useEffect(() => {
+    axiosInstance.get("/user/username").then((res) => {
+      setUserData({ username: res.data[0].id });
+    });
+  }, [setUserData]);
+
+  const joinHandler = (e) => {
+    e.preventDefault();
+    console.log(userData.username);
+    if (data.posts.players_needed === 0) {
+      return;
+    }
+    axiosInstance
+      .put(`edit/${id}/`, {
+        players_needed: (data.posts.players_needed -= 1),
+        description: data.posts.description,
+        area: data.posts.area,
+        time: data.posts.time,
+        player: userData.username,
+      })
+      .then((res) => {
+        axiosInstance.get(id).then((res) => {
+          setData({ posts: res.data });
+        });
+      });
+  };
+
   return (
     <>
       <Navbar />
@@ -35,7 +63,12 @@ function SingleSesh() {
           Description: {data.posts.description}
         </h2>
         <div className="button-grid">
-          <button className={`single-join-btn ${data.posts.id}`}>Join</button>
+          <button
+            className={`single-join-btn ${data.posts.id}`}
+            onClick={joinHandler}
+          >
+            Join
+          </button>
           <button className={`single-chat-btn chat-${data.posts.id}`}>
             Chat
           </button>

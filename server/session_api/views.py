@@ -1,7 +1,7 @@
 from email import message
 from rest_framework import generics 
 from sesh.models import Post
-from .serializers import PostSerializer
+from .serializers import PostSerializer, UpdateSerializer
 from rest_framework.permissions import SAFE_METHODS, BasePermission, IsAdminUser, DjangoModelPermissionsOrAnonReadOnly, IsAuthenticated, AllowAny
 from rest_framework import viewsets
 from rest_framework import filters
@@ -9,6 +9,8 @@ from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
 from django_filters.rest_framework import DjangoFilterBackend
 import django_filters
+
+from session_api import serializers
 
 class PostUserWritePermission(BasePermission):
     message = 'Editing posts is restricted to the creator of this session.'
@@ -61,10 +63,13 @@ class CreatePost(generics.CreateAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
 
-class EditPost(generics.UpdateAPIView):
+class EditPost(generics.RetrieveUpdateAPIView):
+    class Meta:
+        fields = ['players_needed']
     permission_classes = [IsAuthenticated]
-    serializer_class = PostSerializer
+    serializer_class = UpdateSerializer
     queryset = Post.objects.all()
+
 
 class DeletePost(generics.RetrieveDestroyAPIView):
     permission_classes = [PostUserWritePermission]
