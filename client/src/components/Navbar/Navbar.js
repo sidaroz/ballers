@@ -1,10 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axiosInstance from "../../axios";
 import "./styles.css";
 
 function Navbar() {
   const navigate = useNavigate();
+  const [userData, setUserData] = useState({
+    username: "",
+    properUsername: "",
+  });
+  useEffect(() => {
+    axiosInstance.get("/user/username").then((res) => {
+      setUserData({
+        username: res.data[0].id,
+        properUsername: res.data[0].user_name,
+        bio: res.data[0].bio,
+        image: res.data[0].image,
+      });
+    });
+  }, [setUserData]);
+
   const logOutHandler = () => {
     const response = axiosInstance.post("user/logout/blacklist/", {
       refresh_token: localStorage.getItem("refresh_token"),
@@ -24,7 +39,9 @@ function Navbar() {
         <h1 className="logo" onClick={() => navigate("/home")}>
           Ballers
         </h1>
-        <div className="navbar-profile" onClick={profileClick}></div>
+        <div className="navbar-profile" onClick={profileClick}>
+          <img src={userData.image}></img>
+        </div>
       </div>
       <div className="user-info hidden">
         <h3 className="top-info" onClick={() => navigate("/view-profile")}>

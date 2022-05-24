@@ -15,13 +15,16 @@ function ViewProfile() {
         username: res.data[0].id,
         properUsername: res.data[0].user_name,
         bio: res.data[0].bio,
+        image: res.data[0].image,
       });
     });
   }, [setUserData]);
   return (
     <>
       <Navbar />
-      <div className="profile-image"></div>
+      <div className="profile-image">
+        <img src={userData.image}></img>
+      </div>
       <h1>{userData.properUsername}</h1>
 
       <p>{userData.bio}</p>
