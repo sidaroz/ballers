@@ -15,18 +15,13 @@ function App() {
       <main>
         <Routes>
           <Route index path="/" element={<Login />} />
-          <Route index path="/register" element={<Register />} />
-          <Route index path="/edit-profile" element={<EditProfile />} />
-          <Route index path="/view-profile" element={<ViewProfile />} />
-          <Route index path="/home" element={<Home />} />
-          <Route index path="/create-session" element={<CreateSesh />} />
-          <Route index path="/session/:id" element={<SingleSesh />} />
-          <Route
-            index
-            path={`home/search/:area/:difficulty`}
-            element={<Filter />}
-          />
-          ;
+          <Route path="/register" element={<Register />} />
+          <Route path="/edit-profile" element={<EditProfile />} />
+          <Route path="/view-profile" element={<ViewProfile />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/create-session" element={<CreateSesh />} />
+          <Route path="/session/:id" element={<SingleSesh />} />
+          <Route path={`home/search/:area/:difficulty`} element={<Filter />} />;
         </Routes>
       </main>
     </>

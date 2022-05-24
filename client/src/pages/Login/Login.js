@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axiosInstance from "../../axios";
-import "./styles.css";
+import "./Login.css";
+import mainLogo from "../../images/main-logo.png";
+import loginLogo from "../../images/login-button.png";
+import registerLogo from "../../images/register-button.png";
 
 function Home() {
   const navigate = useNavigate();
@@ -48,8 +51,9 @@ function Home() {
   }
 
   return (
-    <>
-      <h1 className="home-title">Ballers</h1>
+    <main className="login-body">
+      <h1 className="home-title">Players</h1>
+      <img src={mainLogo} alt="ballers main logo" className="home-logo" />
       <form className="hidden login-form">
         <input
           type="text"
@@ -67,15 +71,20 @@ function Home() {
         />
       </form>
       <div className="btn-grid">
-        <button className="btn-login" onClick={loginHandler}>
-          Login
-        </button>
-        <button className="btn-register" onClick={() => navigate("/register")}>
-          {" "}
-          Register
-        </button>
+        <img
+          src={loginLogo}
+          alt="login button"
+          className="login-btn"
+          onClick={loginHandler}
+        />
+        <img
+          src={registerLogo}
+          alt="login button"
+          className="register-btn"
+          onClick={() => navigate("/register")}
+        />
       </div>
-    </>
+    </main>
   );
 }
 

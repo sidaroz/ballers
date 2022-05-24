@@ -15,6 +15,8 @@
 
 .logo {
   padding-top: 5px;
+  max-width: 90px;
+  height: auto;
 }
 
 .hidden {
@@ -22,7 +24,7 @@
 }
 
 .user-info {
-  background-color: salmon;
+  background-color: rgb(114, 121, 250);
   text-align: center;
   max-width: 75%;
   margin-inline: auto;
@@ -36,4 +38,8 @@
 .bottom-info {
   padding-top: 5px;
   padding-bottom: 5px;
+}
+
+.username-image {
+  display: flex;
 }

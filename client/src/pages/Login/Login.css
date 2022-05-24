@@ -1,0 +1,32 @@
+.hidden {
+  display: none;
+}
+
+.login-body {
+  background: linear-gradient(to top left, rgb(89, 65, 225), rgb(96, 87, 142));
+  height: 100vh;
+}
+
+.home-title {
+  padding-top: 10%;
+}
+.home-logo {
+  max-width: 100%;
+  margin-top: 35%;
+  opacity: 80%;
+}
+
+.btn-grid {
+  max-width: 60%;
+  margin-inline: auto;
+  opacity: 80%;
+}
+
+.login-btn {
+  margin-left: 3%;
+  max-width: 100px;
+}
+.register-btn {
+  max-width: 100px;
+  margin-left: 10%;
+}

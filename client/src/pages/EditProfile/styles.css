@@ -5,6 +5,19 @@
 }
 
 .bio-edit {
+  display: flex;
   min-width: 300px;
   min-height: 150px;
+  margin-top: 20px;
+  margin-inline: auto;
+}
+
+.image-input {
+  margin-inline: auto;
+  margin-left: 25%;
+}
+
+.edit-profile-save-btn {
+  display: flex;
+  margin-inline: auto;
 }

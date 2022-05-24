@@ -25,12 +25,18 @@ function ViewProfile() {
       <div className="profile-image">
         <img src={userData.image}></img>
       </div>
-      <h1>{userData.properUsername}</h1>
-
-      <p>{userData.bio}</p>
-      <button onClick={() => navigate("/edit-profile")}>Edit Profile</button>
-
-      <button>Home</button>
+      <h1 className="profile-username">{userData.properUsername}</h1>
+      <h2 className="bio-heading">Bio:</h2>
+      <p className="current-bio">{userData.bio}</p>
+      <div className="view-profile-btn-grid">
+        <button onClick={() => navigate("/edit-profile")}>Edit Profile</button>
+        <button
+          className="view-profile-home-btn"
+          onClick={() => navigate("/home")}
+        >
+          Home
+        </button>
+      </div>
     </>
   );
 }

@@ -71,11 +71,11 @@ function EditProfile() {
       </div>
       <input
         accept="image/*"
-        id="post-image"
         name="image"
         type="file"
         id="image-input"
         onChange={handleChange}
+        className="image-input"
       />
       <h1>{userData.properUsername}</h1>
 
@@ -84,9 +84,12 @@ function EditProfile() {
         placeholder="Bio"
         name="bio"
         onChange={handleChange}
+        maxLength="500"
       ></textarea>
       <br></br>
-      <button onClick={handleSubmit}>Save Edit</button>
+      <button onClick={handleSubmit} className="edit-profile-save-btn">
+        Save Edit
+      </button>
     </>
   );
 }

@@ -3,9 +3,32 @@
   width: 150px;
   height: 150px;
   border-radius: 50%;
+  margin-inline: auto;
+  margin-top: 10%;
+}
+
+.bio-heading {
+  margin-top: 20px;
+  max-width: 90%;
+  margin-inline: auto;
 }
 
 .bio-edit {
   min-width: 300px;
   min-height: 150px;
+}
+
+.current-bio {
+  max-width: 90%;
+  margin-inline: auto;
+}
+.view-profile-btn-grid {
+  max-width: 20%;
+  display: grid;
+  margin-top: 10%;
+  margin-inline: auto;
+}
+
+.view-profile-home-btn {
+  margin-top: 10px;
 }

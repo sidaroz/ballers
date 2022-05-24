@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axiosInstance from "../../axios";
 import "./styles.css";
+import logo from "../../images/nav-logo-small.png";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -36,11 +37,14 @@ function Navbar() {
   return (
     <>
       <div className="navbar-grid">
-        <h1 className="logo" onClick={() => navigate("/home")}>
-          Ballers
-        </h1>
+        <img
+          src={logo}
+          alt="players logo"
+          className="logo"
+          onClick={() => navigate("/home")}
+        />
         <div className="navbar-profile" onClick={profileClick}>
-          <img src={userData.image}></img>
+          <img src={userData.image} alt="user profile"></img>
         </div>
       </div>
       <div className="user-info hidden">
