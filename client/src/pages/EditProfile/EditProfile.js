@@ -28,8 +28,8 @@ function EditProfile() {
   const [postData, setPostData] = useState(initialFormData);
   const handleChange = (e) => {
     if ([e.target.name] == "image") {
-      console.log(userData.username);
       console.log(e.target.files);
+      console.log(imageInput.files[0]);
       setPostImage({
         image: e.target.files,
       });
@@ -41,10 +41,10 @@ function EditProfile() {
     }
   };
 
+  const imageInput = document.querySelector("#image-input");
   const handleSubmit = (e) => {
     e.preventDefault();
-    const imageInput = document.querySelector("#image-input");
-    console.log(imageInput.files);
+    console.log(imageInput.files.length);
     let formData = new FormData();
     formData.append("user_name", userData.properUsername);
     formData.append("bio", postData.bio);
@@ -57,7 +57,6 @@ function EditProfile() {
     } else {
       formData.append("image", postImage.image[0]);
     }
-
     axiosInstance
       .put(`user/username/${userData.username}/`, formData)
       .then(() => {

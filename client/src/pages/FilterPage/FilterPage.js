@@ -140,7 +140,7 @@ function Filter() {
         </div>
         {data.posts.map((session, i) => {
           return (
-            <Link to={`/session/${session.id}`}>
+            <Link to={`/session/${session.id}`} key={session.id}>
               <div className={`game-info ${i + 1}`}>
                 <div>
                   <h2>{session.player.username}</h2>
