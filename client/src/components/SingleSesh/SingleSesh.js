@@ -34,27 +34,44 @@ function SingleSesh() {
   }, [setUserData]);
 
   //JOIN FUNCTIONALITY
-  const joinHandler = (e) => {
-    const joinBtn = document.querySelector(".single-join-btn");
-    console.log(data);
+  const [clicked, setClicked] = useState(false);
+  const joinHandlerFalse = (e) => {
+    const joinBtn = document.querySelector(".single-join-btn ");
+    joinBtn.textContent = "Unjoin";
     e.preventDefault();
-    if (data.posts.players_needed === 0) {
-      return (joinBtn.disabled = true);
-    } else {
-      axiosInstance
-        .put(`edit/${id}/`, {
-          players_needed: (data.posts.players_needed -= 1),
-          description: data.posts.description,
-          area: data.posts.area,
-          time: data.posts.time,
-          player: originalId,
-        })
-        .then((res) => {
-          axiosInstance.get(id).then((res) => {
-            setData({ posts: res.data });
-          });
+    axiosInstance
+      .put(`edit/${id}/`, {
+        players_needed: (data.posts.players_needed -= 1),
+        description: data.posts.description,
+        area: data.posts.area,
+        time: data.posts.time,
+        player: originalId,
+      })
+      .then((res) => {
+        axiosInstance.get(id).then((res) => {
+          setClicked(true);
+          console.log(clicked);
+          setData({ posts: res.data });
         });
-    }
+      });
+  };
+  const joinHandlerTrue = (e) => {
+    const joinBtn = document.querySelector(".single-join-btn ");
+    joinBtn.textContent = "Join";
+    axiosInstance
+      .put(`edit/${id}/`, {
+        players_needed: (data.posts.players_needed += 1),
+        description: data.posts.description,
+        area: data.posts.area,
+        time: data.posts.time,
+        player: originalId,
+      })
+      .then((res) => {
+        axiosInstance.get(id).then((res) => {
+          setClicked(false);
+          setData({ posts: res.data });
+        });
+      });
   };
 
   //DELETE FUNCTIONALITY
@@ -88,7 +105,12 @@ function SingleSesh() {
                   ? "hidden"
                   : ""
               }`}
-              onClick={joinHandler}
+              onClick={clicked ? joinHandlerTrue : joinHandlerFalse}
+              disabled={
+                data.posts.players_needed === 0 && clicked === false
+                  ? true
+                  : false
+              }
             >
               Join
             </button>

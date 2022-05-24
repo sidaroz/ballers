@@ -31,7 +31,7 @@ class Post(models.Model):
     area = models.CharField(choices=options2, max_length=50)
     difficulty = models.CharField(max_length=50, choices=options, default='Beginner')
     time = models.CharField(max_length=5)
-    players_needed = models.CharField(max_length=1)
+    players_needed = models.IntegerField(max_length=1)
     description = models.TextField(unique_for_date='published')
     published = models.DateTimeField(default=timezone.now)
     player = models.ForeignKey(
@@ -39,7 +39,7 @@ class Post(models.Model):
     )
 
     class Meta:
-        ordering = ('-published',)
+        ordering = ('-id',)
 
     def __str__(self):
         return self.time

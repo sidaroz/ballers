@@ -13,6 +13,7 @@ pyyaml = "*"
 uritemplate = "*"
 coreapi = "*"
 django-filter = "*"
+pillow = "*"
 
 [dev-packages]
 

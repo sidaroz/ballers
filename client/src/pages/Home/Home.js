@@ -56,7 +56,7 @@ function Home() {
         <div className="filter-grid hidden">
           <form>
             <div className="labels">
-              <label for="Area">Area:</label>
+              <label htmlFor="Area">Area:</label>
               <select
                 name="Area"
                 placeholder="Area"
@@ -71,7 +71,7 @@ function Home() {
             </div>
 
             <div className="labels">
-              <label for="Difficulty">Difficulty:</label>
+              <label htmlFor="Difficulty">Difficulty:</label>
               <select
                 name="Difficulty"
                 className="difficulty-filter"
@@ -100,7 +100,7 @@ function Home() {
         </div>
         {sessions.map((session, i) => {
           return (
-            <Link to={`/session/${session.id}`}>
+            <Link to={`/session/${session.id}`} key={session.id}>
               <div className={`game-info ${session.id}`}>
                 <div>
                   <h2>{session.player.username}</h2>

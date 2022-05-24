@@ -1,7 +1,11 @@
+from email.policy import default
 from django.db import models
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
+
+def upload_to(instance, filename):
+    return 'users/{filename}'.format(filename=filename)
 
 class CustomAccountManager(BaseUserManager):
 
@@ -35,6 +39,7 @@ class NewUser(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(_('email address'), unique=True)
     user_name = models.CharField(max_length=150, unique=True)
     start_date = models.DateTimeField(default=timezone.now)
+    image = models.ImageField(_('Image'), upload_to=upload_to, default='users/default.jpg')
     bio = models.TextField(_('bio'), max_length=500, blank=True)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)

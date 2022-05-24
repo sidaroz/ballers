@@ -1,6 +1,5 @@
 from rest_framework import serializers
 from sesh.models import Post
-from users.models import NewUser
 
 class PostSerializer(serializers.ModelSerializer):
     class Meta:
