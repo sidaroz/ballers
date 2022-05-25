@@ -34,11 +34,13 @@
 .single-delete-btn {
   margin-top: 10px;
 }
-.single-chat-btn {
+.chat-logo-btn {
   margin-top: 10px;
 }
 .button-grid {
-  max-width: 15%;
+  display: flex;
+  margin-top: 5%;
+  max-width: 22%;
   display: flex;
   flex-direction: column;
   margin-inline: auto;
@@ -46,4 +48,8 @@
 
 .hidden {
   display: none;
+}
+
+.full-session {
+  opacity: 50%;
 }

@@ -20,4 +20,6 @@
 .edit-profile-save-btn {
   display: flex;
   margin-inline: auto;
+  max-width: 30%;
+  margin-top: 5%;
 }

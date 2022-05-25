@@ -3,6 +3,9 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import axiosInstance from "../../axios";
 import "./styles.css";
+import homeLogo from "../../images/home-button.png";
+import editProfileLogo from "../../images/edit-profile.png";
+
 function ViewProfile() {
   const navigate = useNavigate();
   const [userData, setUserData] = useState({
@@ -23,19 +26,24 @@ function ViewProfile() {
     <>
       <Navbar />
       <div className="profile-image">
-        <img src={userData.image}></img>
+        <img src={userData.image} alt="user profile"></img>
       </div>
       <h1 className="profile-username">{userData.properUsername}</h1>
       <h2 className="bio-heading">Bio:</h2>
       <p className="current-bio">{userData.bio}</p>
       <div className="view-profile-btn-grid">
-        <button onClick={() => navigate("/edit-profile")}>Edit Profile</button>
-        <button
+        <img
+          src={editProfileLogo}
+          alt="edit profile"
+          onClick={() => navigate("/edit-profile")}
+          className="view-profile-home-btn"
+        />
+        <img
+          src={homeLogo}
+          alt="home button"
           className="view-profile-home-btn"
           onClick={() => navigate("/home")}
-        >
-          Home
-        </button>
+        />
       </div>
     </>
   );

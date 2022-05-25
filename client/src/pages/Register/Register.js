@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./styles.css";
 import axiosInstance from "../../axios";
+import registerNowLogo from "../../images/register-now.png";
+import registerNowBtnLogo from "../../images/register.png";
 
 function Register() {
   const navigate = useNavigate();
@@ -38,7 +40,11 @@ function Register() {
 
   return (
     <>
-      <h1>Register Now!</h1>
+      <img
+        src={registerNowLogo}
+        alt="register now"
+        className="register-header"
+      />
       <form className="form-grid">
         <input
           type="text"
@@ -64,9 +70,12 @@ function Register() {
           onChange={handleChange}
           required
         ></input>
-        <button type="submit" onClick={handleSubmit}>
-          Register!
-        </button>
+        <img
+          src={registerNowBtnLogo}
+          alt="register button"
+          onClick={handleSubmit}
+          className="register-btn-registerpage"
+        />
       </form>
       <h2 className="return-home" onClick={() => navigate("/")}>
         Already have an account? Click Here to login.

@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import axiosInstance from "../../axios";
 import "./styles.css";
 import logo from "../../images/nav-logo-small.png";
+import viewProfileLogo from "../../images/view-profile.png";
+import signOutLogo from "../../images/sign-out.png";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -48,12 +50,18 @@ function Navbar() {
         </div>
       </div>
       <div className="user-info hidden">
-        <h3 className="top-info" onClick={() => navigate("/view-profile")}>
-          View Profile
-        </h3>
-        <h3 className="bottom-info" onClick={logOutHandler}>
-          Sign Out
-        </h3>
+        <img
+          src={viewProfileLogo}
+          alt="view profile"
+          onClick={() => navigate("/view-profile")}
+          className="top-info"
+        />
+        <img
+          src={signOutLogo}
+          alt="sign out"
+          onClick={logOutHandler}
+          className="bottom-info"
+        />
       </div>
     </>
   );

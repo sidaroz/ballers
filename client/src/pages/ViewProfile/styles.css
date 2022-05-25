@@ -23,12 +23,13 @@
   margin-inline: auto;
 }
 .view-profile-btn-grid {
-  max-width: 20%;
+  max-width: 25%;
   display: grid;
   margin-top: 10%;
   margin-inline: auto;
 }
 
 .view-profile-home-btn {
+  max-width: 100%;
   margin-top: 10px;
 }

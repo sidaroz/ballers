@@ -3,6 +3,10 @@ import axiosInstance from "../../axios";
 import { useParams, useNavigate } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import "./styles.css";
+import chatLogo from "../../images/chat.png";
+import joinLogo from "../../images/join-button.png";
+import unJoinLogo from "../../images/unjoin-button.png";
+import deletePostLogo from "../../images/delete-post.png";
 
 function SingleSesh() {
   const { id } = useParams();
@@ -36,7 +40,7 @@ function SingleSesh() {
   //JOIN FUNCTIONALITY
   const [clicked, setClicked] = useState(false);
   const joinHandlerFalse = (e) => {
-    const joinBtn = document.querySelector(".single-join-btn ");
+    const joinBtn = document.querySelector(".single-join-btn");
     joinBtn.textContent = "Unjoin";
     e.preventDefault();
     axiosInstance
@@ -56,7 +60,7 @@ function SingleSesh() {
       });
   };
   const joinHandlerTrue = (e) => {
-    const joinBtn = document.querySelector(".single-join-btn ");
+    const joinBtn = document.querySelector(".single-join-btn");
     joinBtn.textContent = "Join";
     axiosInstance
       .put(`edit/${id}/`, {
@@ -79,6 +83,7 @@ function SingleSesh() {
     e.preventDefault();
     axiosInstance.delete(`delete/${id}/`).then(() => navigate("/home"));
   };
+
   if (!loading) {
     return (
       <>
@@ -99,37 +104,47 @@ function SingleSesh() {
             Description: {data.posts.description}
           </h2>
           <div className="button-grid">
-            <button
+            <img
+              src={clicked ? unJoinLogo : joinLogo}
+              onClick={
+                data.posts.players_needed === 0 && !clicked
+                  ? null
+                  : data.posts.players_needed === 0 && clicked
+                  ? joinHandlerTrue
+                  : clicked
+                  ? joinHandlerTrue
+                  : joinHandlerFalse
+              }
+              id="join-btn"
               className={`single-join-btn ${data.posts.id} ${
                 userData.properUsername === data.posts.player.username
                   ? "hidden"
                   : ""
+              } ${
+                data.posts.players_needed === 0 && clicked
+                  ? null
+                  : data.posts.players_needed === 0
+                  ? "full-session"
+                  : ""
               }`}
-              onClick={clicked ? joinHandlerTrue : joinHandlerFalse}
-              disabled={
-                data.posts.players_needed === 0 && clicked === false
-                  ? true
-                  : false
-              }
-            >
-              Join
-            </button>
-            <button
-              className={`single-chat-btn chat-${data.posts.id}`}
+              alt="join or unjoin logo"
+            />
+            <img
+              src={chatLogo}
+              alt="chat logo"
               onClick={() => navigate(`/session/chat/${data.posts.id}`)}
-            >
-              Chat
-            </button>
-            <button
+              className="chat-logo-btn"
+            />
+            <img
+              src={deletePostLogo}
+              alt="delete post"
               className={`single-delete-btn ${data.posts.id} ${
                 userData.properUsername === data.posts.player.username
                   ? ""
                   : "hidden"
               }`}
               onClick={deleteHandler}
-            >
-              Delete Post
-            </button>
+            />
           </div>
         </div>
       </>

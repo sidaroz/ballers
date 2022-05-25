@@ -3,6 +3,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import { useNavigate } from "react-router-dom";
 import "./styles.css";
 import axiosInstance from "../../axios";
+import saveLogo from "../../images/save-button.png";
 
 function EditProfile() {
   const navigate = useNavigate();
@@ -67,7 +68,7 @@ function EditProfile() {
     <>
       <Navbar />
       <div className="profile-image">
-        <img src={userData.image}></img>
+        <img src={userData.image} alt="user profile"></img>
       </div>
       <input
         accept="image/*"
@@ -86,10 +87,12 @@ function EditProfile() {
         onChange={handleChange}
         maxLength="500"
       ></textarea>
-      <br></br>
-      <button onClick={handleSubmit} className="edit-profile-save-btn">
-        Save Edit
-      </button>
+      <img
+        src={saveLogo}
+        onClick={handleSubmit}
+        className="edit-profile-save-btn"
+        alt="save logo"
+      />
     </>
   );
 }

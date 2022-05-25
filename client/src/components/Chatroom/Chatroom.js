@@ -13,6 +13,7 @@ import axiosInstance from "../../axios";
 import { useParams } from "react-router-dom";
 import { nanoid } from "nanoid";
 import Navbar from "../Navbar/Navbar";
+import "./Chatroom.css";
 
 firebase.initializeApp({
   apiKey: "AIzaSyCtEZSG4nfLVQtIDAH9Gk69KgFTnGzrQRo",
@@ -104,7 +105,7 @@ function Chatroom() {
   return (
     <>
       <Navbar />
-      <div>
+      <div className="chat-box">
         <ul>
           {listOfMessages.map((item, i) => (
             <li key={item.messageId}>
@@ -113,10 +114,13 @@ function Chatroom() {
             </li>
           ))}
         </ul>
+      </div>
 
-        <text>Hello world</text>
-        <input onChange={handleMessageChange} />
-        <button onClick={handleSendMessage}>SEND MESSAGE</button>
+      <div className="input-chat">
+        <input className="msg-input" onChange={handleMessageChange} />
+        <button className="send-msg-btn" onClick={handleSendMessage}>
+          Send
+        </button>
       </div>
     </>
   );
