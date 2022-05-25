@@ -56,20 +56,22 @@ function Home() {
       <img src={headerLogo} alt="players" className="login-header" />
       <img src={mainLogo} alt="ballers main logo" className="home-logo" />
       <form className="hidden login-form">
-        <input
-          type="text"
-          placeholder="Username"
-          onChange={handleChange}
-          name="username"
-          id="login-username"
-        />
-        <input
-          type="password"
-          onChange={handleChange}
-          name="password"
-          placeholder="Password"
-          id="login-password"
-        />
+        <div className="input-form">
+          <input
+            type="text"
+            placeholder="Username"
+            onChange={handleChange}
+            name="username"
+            id="login-username"
+          />
+          <input
+            type="password"
+            onChange={handleChange}
+            name="password"
+            placeholder="Password"
+            id="login-password"
+          />
+        </div>
       </form>
       <div className="btn-grid">
         <img

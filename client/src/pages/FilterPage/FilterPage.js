@@ -51,10 +51,18 @@ function Filter() {
       <>
         <Navbar />
         <div className="edit-grid">
-          <h2 onClick={filterHandler}>Filter</h2>
-          <button onClick={() => navigate("/create-session")}>
-            + Make Sesh
-          </button>
+          <img
+            src={filterLogo}
+            alt="filter logo"
+            className="filter-logo"
+            onClick={filterHandler}
+          />
+          <img
+            src={makeSeshLogo}
+            alt="session logo"
+            className="session-logo"
+            onClick={() => navigate("/create-session")}
+          />
         </div>
 
         <div className="filter-grid hidden">

@@ -14,7 +14,7 @@
 }
 .register-btn-registerpage {
   max-width: 60%;
-  margin-top: 7%;
+  margin-top: 10%;
   margin-inline: auto;
 }
 
@@ -26,4 +26,39 @@
 .register-header {
   max-width: 100%;
   margin-top: 10%;
+}
+
+#register-username {
+  margin-top: 5px;
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  text-align: center;
+}
+
+#register-username::placeholder {
+  color: rgba(0, 0, 0, 1);
+}
+
+#register-email {
+  margin-top: 5px;
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  text-align: center;
+}
+#register-email::placeholder {
+  color: rgba(0, 0, 0, 1);
+}
+
+#register-password {
+  margin-top: 5px;
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  text-align: center;
+}
+
+#register-password::placeholder {
+  color: rgba(0, 0, 0, 1);
 }

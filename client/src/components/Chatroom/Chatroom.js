@@ -10,10 +10,11 @@ import {
 } from "react-firebase-hooks/firestore";
 import { getAuth, signInAnonymously } from "firebase/auth";
 import axiosInstance from "../../axios";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { nanoid } from "nanoid";
 import Navbar from "../Navbar/Navbar";
 import "./Chatroom.css";
+import backLogo from "../../images/back-button.png";
 
 firebase.initializeApp({
   apiKey: "AIzaSyCtEZSG4nfLVQtIDAH9Gk69KgFTnGzrQRo",
@@ -31,6 +32,7 @@ firebase.initializeApp({
 
 //TODO: When going to this page pass sesh id and user id via params or query
 function Chatroom() {
+  const navigate = useNavigate();
   const db = firebase.firestore();
   const { id } = useParams();
   const reference = db.collection(`room-${id}`);
@@ -68,6 +70,8 @@ function Chatroom() {
       userImage: userData.image,
     };
     const res = await reference.add(curMessage);
+    const sendBtn = document.querySelector(".msg-input");
+    sendBtn.value = "";
 
     //TODO: Add if message fails
   };
@@ -82,7 +86,6 @@ function Chatroom() {
     const collectionListener = reference.onSnapshot((querySnapshot) => {
       querySnapshot.docChanges().forEach((change) => {
         if (change.type === "added") {
-          console.log("doc=", change.doc.data());
           const incomingData = change.doc.data();
           const newMessage = {
             messageId: incomingData.messageId,
@@ -105,6 +108,12 @@ function Chatroom() {
   return (
     <>
       <Navbar />
+      <img
+        src={backLogo}
+        alt="back button"
+        className="back-btn-logo"
+        onClick={() => navigate(-1)}
+      />
       <div className="chat-box">
         <ul>
           {listOfMessages.map((item, i) =>

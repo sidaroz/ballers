@@ -71,7 +71,12 @@ function CreateSesh() {
         <form className="create-session-form">
           <div className="labels">
             <label htmlFor="Area">Area:</label>
-            <select name="area" placeholder="Area" onChange={handleChange}>
+            <select
+              name="area"
+              placeholder="Area"
+              onChange={handleChange}
+              className="create-area"
+            >
               <option value="North London">North London</option>
               <option value="West London">West London</option>
               <option value="East London">East London</option>
@@ -81,7 +86,7 @@ function CreateSesh() {
 
           <div className="labels">
             <label htmlFor="Difficulty">Difficulty:</label>
-            <select name="difficulty" onChange={handleChange}>
+            <select name="difficulty" onChange={handleChange} className="create-difficulty">
               <option value="Beginner">Beginner</option>
               <option value="Intermediate">Intermediate</option>
               <option value="Advanced">Advanced</option>
@@ -114,6 +119,7 @@ function CreateSesh() {
                 rows="4"
                 cols="40"
                 onChange={handleChange}
+                className="create-description"
               />
             </div>
           </div>

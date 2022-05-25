@@ -3,7 +3,7 @@
   min-height: 70vh;
   border: 3px solid rgb(89, 65, 225);
   margin-inline: auto;
-  margin-top: 10%;
+  margin-top: 2%;
   border-radius: 4%;
   padding: 0 5px;
 }
@@ -120,4 +120,10 @@ p.chat-para-left {
   font-size: 12px;
   padding-top: 5px;
   color: rgb(89, 65, 225);
+}
+
+.back-btn-logo {
+  margin-top: 13px;
+  margin-left: 15px;
+  max-width: 20%;
 }
