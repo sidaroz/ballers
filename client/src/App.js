@@ -8,6 +8,7 @@ import Home from "./pages/Home/Home";
 import CreateSesh from "./pages/CreateSesh/CreateSesh";
 import SingleSesh from "./components/SingleSesh/SingleSesh";
 import Filter from "./pages/FilterPage/FilterPage";
+import Chatroom from "./components/Chatroom/Chatroom";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/create-session" element={<CreateSesh />} />
           <Route path="/session/:id" element={<SingleSesh />} />
+          <Route path="/session/chat/:id" element={<Chatroom />} />
           <Route path={`home/search/:area/:difficulty`} element={<Filter />} />;
         </Routes>
       </main>

@@ -1,6 +1,7 @@
 from .views import CreatePost, DeletePost, EditPost, PostList, PostListDetailfilter, PostDetail
 from rest_framework.routers import DefaultRouter
 from django.urls import path
+from . import views
 
 app_name='session_api'
 

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import "./styles.css";
+import makeSeshLogo from "../../images/addsesh-button.png";
+import filterLogo from "../../images/filter-button.png";
 
 function Home() {
   const [sessions, setSessions] = useState([]);
@@ -44,13 +46,21 @@ function Home() {
   const navigate = useNavigate();
   if (!loading) {
     return (
-      <>
+      <main className="lighter-bg">
         <Navbar />
         <div className="edit-grid">
-          <h2 onClick={filterHandler}>Filter</h2>
-          <button onClick={() => navigate("/create-session")}>
-            + Make Sesh
-          </button>
+          <img
+            src={filterLogo}
+            alt="filter logo"
+            className="filter-logo"
+            onClick={filterHandler}
+          />
+          <img
+            src={makeSeshLogo}
+            alt="session logo"
+            className="session-logo"
+            onClick={() => navigate("/create-session")}
+          />
         </div>
 
         <div className="filter-grid hidden">
@@ -113,7 +123,7 @@ function Home() {
             </Link>
           );
         })}
-      </>
+      </main>
     );
   }
   return <p>LOADING....</p>;

@@ -19,7 +19,7 @@ function Navbar() {
         image: res.data[0].image,
       });
     });
-  }, [setUserData]);
+  }, []);
 
   const logOutHandler = () => {
     const response = axiosInstance.post("user/logout/blacklist/", {

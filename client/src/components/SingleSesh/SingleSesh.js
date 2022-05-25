@@ -114,7 +114,10 @@ function SingleSesh() {
             >
               Join
             </button>
-            <button className={`single-chat-btn chat-${data.posts.id}`}>
+            <button
+              className={`single-chat-btn chat-${data.posts.id}`}
+              onClick={() => navigate(`/session/chat/${data.posts.id}`)}
+            >
               Chat
             </button>
             <button

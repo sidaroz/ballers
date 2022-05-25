@@ -5,7 +5,7 @@ from .serializers import PostSerializer, UpdateSerializer
 from rest_framework.permissions import SAFE_METHODS, BasePermission, IsAdminUser, DjangoModelPermissionsOrAnonReadOnly, IsAuthenticated, AllowAny
 from rest_framework import viewsets
 from rest_framework import filters
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, render
 from rest_framework.response import Response
 from django_filters.rest_framework import DjangoFilterBackend
 import django_filters
@@ -78,6 +78,7 @@ class DeletePost(generics.RetrieveDestroyAPIView):
         id = self.kwargs['pk']
         print(id)
         return Post.objects.filter(id=id)
+
 
 # THIS WORKS
 # class PostList(viewsets.ModelViewSet):

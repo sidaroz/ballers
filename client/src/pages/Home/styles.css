@@ -59,6 +59,10 @@ a {
   color: black;
 }
 
-body {
-  background-color: white;
+.session-logo {
+  max-width: 70px;
+}
+
+.filter-logo {
+  max-width: 70px;
 }
