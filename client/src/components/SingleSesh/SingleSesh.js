@@ -7,6 +7,7 @@ import chatLogo from "../../images/chat.png";
 import joinLogo from "../../images/join-button.png";
 import unJoinLogo from "../../images/unjoin-button.png";
 import deletePostLogo from "../../images/delete-post.png";
+import sessionDetailsLogo from "../../images/session-details.png";
 
 function SingleSesh() {
   const { id } = useParams();
@@ -88,20 +89,25 @@ function SingleSesh() {
     return (
       <>
         <Navbar />
+        <img
+          src={sessionDetailsLogo}
+          alt="session details"
+          className="session-details"
+        />
         <div className={`single-game ${data.posts.id}`}>
           <div>
-            <h2 className="player-username">{data.posts.player.username}</h2>
-            <h2 className="single-time">Time: {data.posts.time}</h2>
+            <h2 className="player-username">{`${data.posts.player.username}'s session`}</h2>
+            <h2 className="single-time">Time: <p className="highlight">{data.posts.time}</p></h2>
           </div>
-          <h2 className="single-area">Area: {data.posts.area}</h2>
+          <h2 className="single-area">Area: <p className="highlight">{data.posts.area}</p></h2>
           <h2 className="single-difficulty">
-            Difficulty: {data.posts.difficulty}
+            Difficulty: <p className="highlight">{data.posts.difficulty}</p>
           </h2>
           <h2 className="single-players-needed">
-            Players Needed: {data.posts.players_needed}
+            Players Needed: <p className="highlight">{data.posts.players_needed}</p>
           </h2>
           <h2 className="single-description">
-            Description: {data.posts.description}
+            Description: <p className="highlight">{data.posts.description}</p>
           </h2>
           <div className="button-grid">
             <img

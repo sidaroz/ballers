@@ -66,3 +66,17 @@ a {
 .filter-logo {
   max-width: 70px;
 }
+
+.search-filter-btn {
+  margin-top: 5%;
+  display: flex;
+  max-width: 25%;
+  margin-inline: auto;
+}
+
+.bold {
+  display: inline;
+  font-weight: bolder;
+  font-size: 25px;
+  color: rgb(213, 215, 253);
+}

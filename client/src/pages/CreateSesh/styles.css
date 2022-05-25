@@ -3,6 +3,10 @@
   margin-inline: auto;
 }
 
+.session-header {
+  max-width: 100%;
+}
+
 select {
   max-width: 40%;
   margin-inline: auto;
@@ -36,4 +40,9 @@ label {
 
 .session-btn {
   margin-top: 10px;
+}
+
+.create-session-btn {
+  max-width: 30%;
+  margin-top: 5%;
 }

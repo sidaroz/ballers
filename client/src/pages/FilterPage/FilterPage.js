@@ -4,6 +4,8 @@ import axiosInstance from "../../axios";
 import Navbar from "../../components/Navbar/Navbar";
 import { Link } from "react-router-dom";
 import "./styles.css";
+import makeSeshLogo from "../../images/addsesh-button.png";
+import filterLogo from "../../images/filter-button.png";
 
 function Filter() {
   const { area, difficulty } = useParams();
@@ -98,10 +100,18 @@ function Filter() {
       <>
         <Navbar />
         <div className="edit-grid">
-          <h2 onClick={filterHandler}>Filter</h2>
-          <button onClick={() => navigate("/create-session")}>
-            + Make Sesh
-          </button>
+          <img
+            src={filterLogo}
+            alt="filter logo"
+            className="filter-logo"
+            onClick={filterHandler}
+          />
+          <img
+            src={makeSeshLogo}
+            alt="session logo"
+            className="session-logo"
+            onClick={() => navigate("/create-session")}
+          />
         </div>
 
         <div className="filter-grid hidden">

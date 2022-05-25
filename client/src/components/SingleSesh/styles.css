@@ -1,5 +1,5 @@
 .single-game {
-  margin-top: 30%;
+  margin-top: 20%;
   max-width: 90%;
   margin-inline: auto;
 }
@@ -39,7 +39,7 @@
 }
 .button-grid {
   display: flex;
-  margin-top: 5%;
+  margin-top: 13%;
   max-width: 22%;
   display: flex;
   flex-direction: column;
@@ -52,4 +52,16 @@
 
 .full-session {
   opacity: 50%;
+}
+
+.session-details {
+  margin-top: 20%;
+  display: flex;
+  max-width: 80%;
+  margin-inline: auto;
+}
+
+.highlight {
+  display: inline;
+  color: rgb(114, 121, 250);
 }

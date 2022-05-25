@@ -39,7 +39,7 @@ function Register() {
   };
 
   return (
-    <>
+    <main className="register-body">
       <img
         src={registerNowLogo}
         alt="register now"
@@ -80,7 +80,7 @@ function Register() {
       <h2 className="return-home" onClick={() => navigate("/")}>
         Already have an account? Click Here to login.
       </h2>
-    </>
+    </main>
   );
 }
 
