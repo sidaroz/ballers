@@ -46,7 +46,7 @@ function Chatroom() {
     axiosInstance.get("/user/username").then((res) => {
       if (res.data.length === 0) {
         navigate("/");
-        setTimeout(() => {
+        setTimeout((e) => {
           alert("You are not logged in");
         }, 1000);
       } else

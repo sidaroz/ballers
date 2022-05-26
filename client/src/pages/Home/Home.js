@@ -5,6 +5,7 @@ import "./styles.css";
 import makeSeshLogo from "../../images/addsesh-button.png";
 import filterLogo from "../../images/filter-button.png";
 import searchFilterLogo from "../../images/search-button.png";
+import Loading from "../../components/Loading/Loading";
 
 function Home() {
   const [sessions, setSessions] = useState([]);
@@ -143,7 +144,7 @@ function Home() {
       </main>
     );
   }
-  return <p>LOADING....</p>;
+  return <Loading />;
 }
 
 export default Home;
