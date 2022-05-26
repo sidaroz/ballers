@@ -96,25 +96,27 @@ function SingleSesh() {
           className="session-details"
         />
         <div className={`single-game ${data.posts.id}`}>
-          <div>
-            <h2 className="player-username">{`${data.posts.player.username}'s session`}</h2>
-            <h2 className="single-time">
-              Time: <p className="highlight">{data.posts.time}</p>
+          <div className="single-sesh-div">
+            <div>
+              <h2 className="player-username">{`${data.posts.player.username}'s session`}</h2>
+              <h2 className="single-time">
+                Time: <p className="highlight">{data.posts.time}</p>
+              </h2>
+            </div>
+            <h2 className="single-area">
+              Area: <p className="highlight">{data.posts.area}</p>
+            </h2>
+            <h2 className="single-difficulty">
+              Difficulty: <p className="highlight">{data.posts.difficulty}</p>
+            </h2>
+            <h2 className="single-players-needed">
+              Players Needed:{" "}
+              <p className="highlight">{data.posts.players_needed}</p>
+            </h2>
+            <h2 className="single-description">
+              Description: <p className="highlight">{data.posts.description}</p>
             </h2>
           </div>
-          <h2 className="single-area">
-            Area: <p className="highlight">{data.posts.area}</p>
-          </h2>
-          <h2 className="single-difficulty">
-            Difficulty: <p className="highlight">{data.posts.difficulty}</p>
-          </h2>
-          <h2 className="single-players-needed">
-            Players Needed:{" "}
-            <p className="highlight">{data.posts.players_needed}</p>
-          </h2>
-          <h2 className="single-description">
-            Description: <p className="highlight">{data.posts.description}</p>
-          </h2>
           <div className="button-grid">
             <img
               src={clicked ? unJoinLogo : joinLogo}

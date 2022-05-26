@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import "./styles.css";
 import makeSeshLogo from "../../images/addsesh-button.png";
 import filterLogo from "../../images/filter-button.png";
+import searchFilterLogo from "../../images/search-button.png";
 
 function Filter() {
   const { area, difficulty } = useParams();
@@ -94,9 +95,12 @@ function Filter() {
                 <option value="Advanced">Advanced</option>
               </select>
             </div>
-            <button className="search-btn" onClick={filterSearch}>
-              Search
-            </button>
+            <img
+              src={searchFilterLogo}
+              alt="search-btn"
+              className="search-filter-btn"
+              onClick={filterSearch}
+            />
           </form>
         </div>
 
@@ -151,22 +155,38 @@ function Filter() {
                 <option value="Advanced">Advanced</option>
               </select>
             </div>
-            <button className="search-btn" onClick={filterSearch}>
-              Search
-            </button>
+            <img
+              src={searchFilterLogo}
+              alt="search-btn"
+              className="search-filter-btn"
+              onClick={filterSearch}
+            />
           </form>
         </div>
         {data.posts.map((session, i) => {
           return (
             <Link to={`/session/${session.id}`} key={session.id}>
-              <div className={`game-info ${i + 1}`}>
+              <div
+                className={`game-info ${i + 1} ${
+                  session.players_needed === 0 ? "full-lobby" : ""
+                }`}
+              >
                 <div>
                   <h2>{session.player.username}</h2>
-                  <h2>Time: {session.time}</h2>
+                  <h2>
+                    Time: <span className="bold">{session.time}</span>
+                  </h2>
                 </div>
-                <h2>Area: {session.area}</h2>
-                <h2>Difficulty: {session.difficulty}</h2>
-                <h2>Players Needed: {session.players_needed}</h2>
+                <h2>
+                  Area: <span className="bold">{session.area}</span>
+                </h2>
+                <h2>
+                  Difficulty: <span className="bold">{session.difficulty}</span>
+                </h2>
+                <h2>
+                  Players Needed:{" "}
+                  <span className="bold">{session.players_needed}</span>
+                </h2>
               </div>
             </Link>
           );

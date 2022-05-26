@@ -65,3 +65,34 @@
   display: inline;
   color: rgb(114, 121, 250);
 }
+
+@media only screen and (min-width: 400px) {
+  .session-details {
+    margin-top: 2%;
+    max-width: 20%;
+  }
+  .single-game {
+    margin-top: 3%;
+  }
+  .single-sesh-div {
+    justify-content: center;
+  }
+  .button-grid {
+    margin-top: 0;
+    max-width: 8%;
+  }
+  .single-join-btn {
+    margin-top: 20%;
+  }
+  .chat-logo-btn {
+    margin-top: 20%;
+  }
+  .single-join-btn:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+  .chat-logo-btn:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+}

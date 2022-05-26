@@ -127,3 +127,35 @@ p.chat-para-left {
   margin-left: 15px;
   max-width: 20%;
 }
+
+@media only screen and (min-width: 400px) {
+  .back-btn-logo {
+    max-width: 7%;
+  }
+  .back-btn-logo:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+  .chat-box {
+    margin-top: 0;
+    max-width: 40%;
+  }
+  .input-chat {
+    max-width: 40%;
+  }
+  .send-msg-btn:hover {
+    color: rgb(89, 65, 225);
+    background-color: rgb(176, 176, 206);
+    cursor: pointer;
+  }
+
+  .send-msg-btn {
+    min-width: 13%;
+    background-color: rgb(89, 65, 225);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 0;
+    margin-left: 17%;
+  }
+}

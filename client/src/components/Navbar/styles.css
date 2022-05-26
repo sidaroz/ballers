@@ -46,3 +46,38 @@
 .username-image {
   display: flex;
 }
+
+@media only screen and (min-width: 400px) {
+  .logo:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+  .top-info {
+    display: inline-block;
+    max-width: 28%;
+    padding-top: 2%;
+  }
+
+  .top-info:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+  .bottom-info {
+    display: inline-block;
+    max-width: 19%;
+    margin-top: 0;
+    padding-bottom: 2%;
+    margin-left: 4%;
+    margin-top: 2%;
+  }
+  .bottom-info:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+
+  .user-info {
+    padding-left: 32%;
+    display: flex;
+    flex-direction: column;
+  }
+}

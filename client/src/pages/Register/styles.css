@@ -19,7 +19,7 @@
 }
 
 .return-home:hover {
-  color: purple;
+  color: rgba(255, 255, 255, 0.615);
   cursor: pointer;
 }
 
@@ -61,4 +61,28 @@
 
 #register-password::placeholder {
   color: rgba(0, 0, 0, 1);
+}
+
+@media only screen and (min-width: 400px) {
+  .register-header {
+    margin-top: 0;
+    display: flex;
+    max-width: 25%;
+    margin-inline: auto;
+  }
+  .form-grid {
+    margin-inline: auto;
+    max-width: 20%;
+  }
+  .register-btn-registerpage {
+    max-width: 30%;
+  }
+  .register-btn-registerpage:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+  .return-home {
+    margin-top: 4%;
+    font-size: 20px;
+  }
 }

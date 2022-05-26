@@ -60,3 +60,34 @@
 #login-password::placeholder {
   color: rgba(255, 255, 255, 0.705);
 }
+
+@media only screen and (min-width: 400px) {
+  .login-header {
+    max-width: 15%;
+    padding-top: 3%;
+  }
+  .home-logo {
+    display: flex;
+    margin-top: 3%;
+    max-width: 30%;
+    margin-inline: auto;
+  }
+  .btn-grid {
+    display: flex;
+    margin-top: 2%;
+    justify-content: center;
+  }
+  .input-form {
+    margin-inline: auto;
+    padding-left: 1.4%;
+    max-width: 20%;
+  }
+  .login-btn:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+  .register-btn:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+}

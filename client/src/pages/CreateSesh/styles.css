@@ -68,5 +68,27 @@ label {
 .create-description {
   border: 1px solid rgb(0, 0, 0);
   border-radius: 5px;
-  text-align: center;
+  padding-left: 5px;
+  resize: none;
+}
+
+@media only screen and (min-width: 400px) {
+  .session-header {
+    display: flex;
+    max-width: 20%;
+    margin-inline: auto;
+  }
+  .create-description {
+    max-width: 50%;
+    margin-inline: auto;
+    resize: none;
+  }
+  .create-session-btn {
+    margin-top: 1%;
+    max-width: 6%;
+  }
+  .create-session-btn:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
 }
