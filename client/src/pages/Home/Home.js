@@ -115,7 +115,11 @@ function Home() {
         {sessions.map((session, i) => {
           return (
             <Link to={`/session/${session.id}`} key={session.id}>
-              <div className={`game-info ${session.id}`}>
+              <div
+                className={`game-info ${session.id} ${
+                  session.players_needed === 0 ? "full-lobby" : ""
+                }`}
+              >
                 <div>
                   <h2>{session.player.username}</h2>
                   <h2>

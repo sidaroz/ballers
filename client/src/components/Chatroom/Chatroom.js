@@ -35,7 +35,8 @@ function Chatroom() {
   const navigate = useNavigate();
   const db = firebase.firestore();
   const { id } = useParams();
-  const reference = db.collection(`room-${id}`);
+  const reference = db.collection(`room-${id}`).orderBy("timeStamp", "asc");
+  const reference2 = db.collection(`room-${id}`);
   const [userData, setUserData] = useState({
     username: "",
     properUsername: "",
@@ -65,11 +66,14 @@ function Chatroom() {
       messageId: nanoid(), //TODO: use any uuid generator (INSTALL NANOID!!!!!! and import)
       username: userData.properUsername,
       message: message,
-      timeStamp: `${new Date().getHours()}:${new Date().getMinutes()}`,
+      timeStamp: `${("0" + new Date().getHours()).slice(-2)}:${(
+        "0" + new Date().getMinutes()
+      ).slice(-2)}:${("0" + new Date().getSeconds()).slice(-2)}`,
       userId: userData.username,
       userImage: userData.image,
+      id: "",
     };
-    const res = await reference.add(curMessage);
+    const res = await reference2.add(curMessage);
     const sendBtn = document.querySelector(".msg-input");
     sendBtn.value = "";
 
@@ -84,16 +88,17 @@ function Chatroom() {
     });
     const latestList = [];
     const collectionListener = reference.onSnapshot((querySnapshot) => {
-      querySnapshot.docChanges().forEach((change) => {
+      querySnapshot.docChanges().forEach((change, i) => {
         if (change.type === "added") {
           const incomingData = change.doc.data();
           const newMessage = {
             messageId: incomingData.messageId,
             username: incomingData.username,
             message: incomingData.message,
-            timeStamp: incomingData.timeStamp,
+            timeStamp: incomingData.timeStamp.slice(0, -3),
             userId: incomingData.userId,
             userImage: incomingData.userImage,
+            id: i,
           };
 
           latestList.push(newMessage);

@@ -92,3 +92,7 @@ a {
   border-radius: 5px;
   text-align: center;
 }
+
+.full-lobby {
+  background-color: rgb(114, 121, 250, 0.65);
+}
