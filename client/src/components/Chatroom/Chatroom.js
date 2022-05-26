@@ -44,12 +44,18 @@ function Chatroom() {
 
   useEffect(() => {
     axiosInstance.get("/user/username").then((res) => {
-      setUserData({
-        username: res.data[0].id,
-        properUsername: res.data[0].user_name,
-        bio: res.data[0].bio,
-        image: res.data[0].image,
-      });
+      if (res.data.length === 0) {
+        navigate("/");
+        setTimeout(() => {
+          alert("You are not logged in");
+        }, 1000);
+      } else
+        setUserData({
+          username: res.data[0].id,
+          properUsername: res.data[0].user_name,
+          bio: res.data[0].bio,
+          image: res.data[0].image,
+        });
     });
   }, []);
 
