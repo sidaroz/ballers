@@ -1,0 +1,98 @@
+.single-game {
+  margin-top: 20%;
+  max-width: 90%;
+  margin-inline: auto;
+}
+
+.player-username {
+  font-size: 25px;
+}
+
+.single-time {
+  font-size: 20px;
+}
+
+.single-area {
+  font-size: 20px;
+}
+
+.single-difficulty {
+  font-size: 20px;
+}
+
+.single-description {
+  font-size: 20px;
+}
+
+.single-players-needed {
+  font-size: 20px;
+}
+
+.single-join-btn {
+  margin-top: 10px;
+}
+.single-delete-btn {
+  margin-top: 10px;
+}
+.chat-logo-btn {
+  margin-top: 10px;
+}
+.button-grid {
+  display: flex;
+  margin-top: 13%;
+  max-width: 22%;
+  display: flex;
+  flex-direction: column;
+  margin-inline: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.full-session {
+  opacity: 50%;
+}
+
+.session-details {
+  margin-top: 20%;
+  display: flex;
+  max-width: 80%;
+  margin-inline: auto;
+}
+
+.highlight {
+  display: inline;
+  color: rgb(114, 121, 250);
+}
+
+@media only screen and (min-width: 400px) {
+  .session-details {
+    margin-top: 2%;
+    max-width: 20%;
+  }
+  .single-game {
+    margin-top: 3%;
+  }
+  .single-sesh-div {
+    justify-content: center;
+  }
+  .button-grid {
+    margin-top: 0;
+    max-width: 8%;
+  }
+  .single-join-btn {
+    margin-top: 20%;
+  }
+  .chat-logo-btn {
+    margin-top: 20%;
+  }
+  .single-join-btn:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+  .chat-logo-btn:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+}

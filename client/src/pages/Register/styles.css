@@ -1,0 +1,88 @@
+.register-body {
+  background: linear-gradient(to top left, rgb(89, 65, 225), rgb(96, 87, 142));
+  height: 100vh;
+}
+.form-grid {
+  display: flex;
+  flex-direction: column;
+  max-width: 40%;
+  margin-inline: auto;
+}
+.return-home {
+  margin-top: 10%;
+  text-align: center;
+}
+.register-btn-registerpage {
+  max-width: 60%;
+  margin-top: 10%;
+  margin-inline: auto;
+}
+
+.return-home:hover {
+  color: rgba(255, 255, 255, 0.615);
+  cursor: pointer;
+}
+
+.register-header {
+  max-width: 100%;
+  margin-top: 10%;
+}
+
+#register-username {
+  margin-top: 5px;
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  text-align: center;
+}
+
+#register-username::placeholder {
+  color: rgba(0, 0, 0, 1);
+}
+
+#register-email {
+  margin-top: 5px;
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  text-align: center;
+}
+#register-email::placeholder {
+  color: rgba(0, 0, 0, 1);
+}
+
+#register-password {
+  margin-top: 5px;
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  text-align: center;
+}
+
+#register-password::placeholder {
+  color: rgba(0, 0, 0, 1);
+}
+
+@media only screen and (min-width: 400px) {
+  .register-header {
+    margin-top: 0;
+    display: flex;
+    max-width: 25%;
+    margin-inline: auto;
+  }
+  .form-grid {
+    margin-inline: auto;
+    max-width: 20%;
+  }
+  .register-btn-registerpage {
+    max-width: 30%;
+  }
+  .register-btn-registerpage:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+  .return-home {
+    margin-top: 4%;
+    font-size: 20px;
+  }
+}

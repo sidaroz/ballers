@@ -1,0 +1,44 @@
+.profile-image img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.bio-edit {
+  display: flex;
+  min-width: 300px;
+  min-height: 150px;
+  margin-top: 20px;
+  margin-inline: auto;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+}
+
+.image-input {
+  margin-inline: auto;
+  margin-left: 25%;
+}
+
+.edit-profile-save-btn {
+  display: flex;
+  margin-inline: auto;
+  max-width: 30%;
+  margin-top: 5%;
+}
+
+@media only screen and (min-width: 400px) {
+  .image-input {
+    margin-left: 43%;
+  }
+  .bio-edit {
+    padding-left: 5px;
+  }
+  .edit-profile-save-btn {
+    margin-top: 2%;
+    max-width: 5%;
+  }
+  .edit-profile-save-btn:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+}

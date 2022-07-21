@@ -1,0 +1,94 @@
+.create-session-form {
+  max-width: 80%;
+  margin-inline: auto;
+}
+
+.session-header {
+  max-width: 100%;
+}
+
+select {
+  max-width: 40%;
+  margin-inline: auto;
+}
+
+.info-grid {
+  display: grid;
+}
+
+.time-input {
+  max-width: 50%;
+  margin-inline: auto;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  text-align: center;
+}
+
+.players-input {
+  max-width: 50%;
+  margin-inline: auto;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+label {
+  margin-top: 3px;
+}
+
+.whole-form {
+  text-align: center;
+}
+
+.session-btn {
+  margin-top: 10px;
+}
+
+.create-session-btn {
+  max-width: 30%;
+  margin-top: 5%;
+}
+
+.create-area {
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  text-align: center;
+}
+
+.create-difficulty {
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  text-align: center;
+}
+
+.create-description {
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  padding-left: 5px;
+  resize: none;
+}
+
+@media only screen and (min-width: 400px) {
+  .session-header {
+    display: flex;
+    max-width: 20%;
+    margin-inline: auto;
+  }
+  .create-description {
+    max-width: 50%;
+    margin-inline: auto;
+    resize: none;
+  }
+  .create-session-btn {
+    margin-top: 1%;
+    max-width: 6%;
+  }
+  .create-session-btn:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+}

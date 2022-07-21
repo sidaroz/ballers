@@ -1,0 +1,161 @@
+.chat-box {
+  max-width: 80%;
+  min-height: 70vh;
+  border: 3px solid rgb(89, 65, 225);
+  margin-inline: auto;
+  margin-top: 2%;
+  border-radius: 4%;
+  padding: 0 5px;
+}
+
+.input-chat {
+  max-width: 80%;
+  margin-top: 10px;
+  border: 2px solid rgb(89, 65, 225);
+  border-radius: 10px;
+  margin-inline: auto;
+}
+
+.send-msg-btn {
+  min-width: 20%;
+  background-color: rgb(89, 65, 225);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 0;
+  margin-left: 10%;
+}
+
+.msg-input {
+  border: none;
+  min-width: 70%;
+  padding-left: 5px;
+}
+
+li.left-side-chat {
+  list-style: none;
+  margin-top: 5px;
+  max-width: 100%;
+  background-color: rgb(89, 65, 225, 0.2);
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+p.chat-para {
+  position: relative;
+  bottom: 10px;
+  margin-left: 18%;
+  font-size: 12px;
+}
+
+.chat-profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.chat-profile {
+  display: flex;
+  padding-left: 5px;
+  padding-top: 5px;
+}
+
+.username-chat {
+  color: rgb(89, 65, 225);
+  margin-left: 5px;
+  margin-top: 6px;
+}
+
+.right-side-chat {
+  list-style: none;
+  margin-top: 5px;
+  max-width: 100%;
+  background-color: rgb(89, 65, 225, 0.5);
+  border-radius: 10px;
+  margin-left: 20px;
+}
+
+.right-side-div {
+  justify-content: end;
+  padding-right: 5px;
+  padding-top: 5px;
+}
+
+p.chat-para-left {
+  position: relative;
+  bottom: 10px;
+  padding-left: 5px;
+  margin-right: 18%;
+  font-size: 12px;
+}
+
+.username-chat-right {
+  color: rgb(89, 65, 225);
+  margin-right: 5px;
+  margin-top: 6px;
+}
+
+.time-right {
+  display: inline;
+  padding-left: 5px;
+  margin-right: 18%;
+  font-size: 12px;
+  padding-top: 5px;
+  color: rgb(89, 65, 225);
+}
+
+.div-holder {
+  display: flex;
+  justify-content: space-between;
+}
+
+.div-holder-left {
+  display: flex;
+  justify-content: space-between;
+}
+
+.time-left {
+  display: inline;
+  padding-right: 5px;
+  margin-left: 18%;
+  font-size: 12px;
+  padding-top: 5px;
+  color: rgb(89, 65, 225);
+}
+
+.back-btn-logo {
+  margin-top: 13px;
+  margin-left: 15px;
+  max-width: 20%;
+}
+
+@media only screen and (min-width: 400px) {
+  .back-btn-logo {
+    max-width: 7%;
+  }
+  .back-btn-logo:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+  .chat-box {
+    margin-top: 0;
+    max-width: 40%;
+  }
+  .input-chat {
+    max-width: 40%;
+  }
+  .send-msg-btn:hover {
+    color: rgb(89, 65, 225);
+    background-color: rgb(176, 176, 206);
+    cursor: pointer;
+  }
+
+  .send-msg-btn {
+    min-width: 13%;
+    background-color: rgb(89, 65, 225);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 0;
+    margin-left: 17%;
+  }
+}

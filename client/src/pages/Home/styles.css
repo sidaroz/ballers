@@ -1,0 +1,139 @@
+.edit-grid {
+  display: flex;
+  max-width: 80%;
+  margin-inline: auto;
+  justify-content: space-between;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+.game-info {
+  padding-top: 10px;
+  background-color: rgb(114, 121, 250);
+  padding-left: 10px;
+  border-radius: 10px;
+  max-width: 80%;
+  margin-inline: auto;
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
+
+.join-game {
+  position: relative;
+  padding: 0 5px;
+  left: 80%;
+  bottom: 20px;
+}
+
+.filter-grid {
+  display: grid;
+  max-width: 70%;
+  margin-inline: auto;
+  margin-bottom: 10px;
+}
+
+.labels {
+  display: grid;
+  text-align: center;
+}
+
+.search-btn {
+  margin-left: 38%;
+  margin-top: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+select {
+  margin-bottom: 5px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.session-logo {
+  max-width: 70px;
+}
+
+.filter-logo {
+  max-width: 70px;
+}
+
+.search-filter-btn {
+  margin-top: 5%;
+  display: flex;
+  max-width: 25%;
+  margin-inline: auto;
+}
+
+.bold {
+  display: inline;
+  font-weight: bolder;
+  font-size: 25px;
+  color: rgb(213, 215, 253);
+}
+
+.area-filter {
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  text-align: center;
+}
+
+.difficulty-filter {
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  text-align: center;
+}
+
+.full-lobby {
+  background-color: rgba(136, 136, 136, 0.75);
+}
+
+@media only screen and (min-width: 400px) {
+  .game-info {
+    max-width: 50%;
+  }
+  .game-info:hover {
+    background-color: rgb(114, 121, 250, 0.8);
+  }
+  h2 {
+    font-size: 15px;
+  }
+  .bold {
+    font-size: 15px;
+  }
+  .filter-logo:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+  .session-logo:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+  .navbar-profile:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+  .edit-grid {
+    margin-top: 2%;
+  }
+  .full-lobby:hover {
+    background-color: rgba(136, 136, 136, 0.75);
+  }
+  .search-filter-btn {
+    max-width: 10%;
+    margin-top: 2%;
+  }
+  .search-filter-btn:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+}
