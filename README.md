@@ -1,8 +1,12 @@
 # Players
 
-An online trivia quiz game where users can choose the category of the quiz, difficulty, number of questions and type of question asked. The users results are then updated on the leaderboards.
+An app where users can post a football session when you need a player last minute and other users on this app can chat and join in on the session. Allowing the football session to continue and this way the session isn't cancelled.
+
+Created as I am passionate about football, and the main problem I faced when playing football weekly was people dropping out last minute.
 
 ## Demo
+
+<p align="center"><img src="/players.gif" width="260" height="520"></p>
 
 ## Remote Hosting
 
@@ -13,8 +17,8 @@ An online trivia quiz game where users can choose the category of the quiz, diff
 
 - Clone or download the repo
 - Open terminal and navigate to server folder
-- Input `cd server` in terminal to navigate to folder with `package.json` file
-- Run npm install to install dependencies
+- Input `cd server` in terminal to navigate to folder with `Pipfile` file
+- Run `pipenv shell` in terminal then `pipenv install` to install dependencies
 - Return to lowest directory by inputting `cd ..` in terminal
 - Navigate to client folder
 - Input `cd client` in terminal to navigate to folder with `package.json` file
@@ -22,13 +26,12 @@ An online trivia quiz game where users can choose the category of the quiz, diff
 
 ### Usage
 
-- Make sure you have Docker running
-- Input `docker compose up` in terminal to get server running
-- Open a new terminal
+- Open a new terminal and navigate to server folder with command `cd server`
+- To run the server then input `python manage.py runserver` or `python3 manage.py runserver` in terminal
+- Return to base directory with input `cd ..`
 - Navigate to client folder with input `cd client`
 - Input `npm run start` this command will open client side to http://localhost:3000
 - To kill server input `ctrl c` in the live terminal
-- To prune docker container first input `docker compose down` followed by `docker volume prune`
 
 ## Technologies
 
