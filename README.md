@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# Players
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An online trivia quiz game where users can choose the category of the quiz, difficulty, number of questions and type of question asked. The users results are then updated on the leaderboards.
 
-## Available Scripts
+## Demo
 
-In the project directory, you can run:
+## Remote Hosting
 
-### `npm start`
+- API is hosted on heroku in https://players-api-final.herokuapp.com/
+- Website is deployed on netlify in https://players.netlify.app
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Clone or download the repo
+- Open terminal and navigate to server folder
+- Input `cd server` in terminal to navigate to folder with `package.json` file
+- Run npm install to install dependencies
+- Return to lowest directory by inputting `cd ..` in terminal
+- Navigate to client folder
+- Input `cd client` in terminal to navigate to folder with `package.json` file
+- Run npm install to install dependencies
 
-### `npm test`
+### Usage
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Make sure you have Docker running
+- Input `docker compose up` in terminal to get server running
+- Open a new terminal
+- Navigate to client folder with input `cd client`
+- Input `npm run start` this command will open client side to http://localhost:3000
+- To kill server input `ctrl c` in the live terminal
+- To prune docker container first input `docker compose down` followed by `docker volume prune`
 
-### `npm run build`
+## Technologies
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Frontend
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- React
+- CSS
+- Firebase
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Backend
 
-### `npm run eject`
+- Python
+- Django
+- SQLite
+- JWT
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Wins
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- User account creation with Django including authentication & authorisation
+- Django REST framework to allow usage with a React frontend
+- Well designed UX/UI with alot of own logos
+- User profiles having default images, and allowing users to change their profile image and bio on app
+- User allowed to create and delete (only if the created the session) sessions
+- Filtering through sessions based on 'area' and 'difficulty'
+- Using React's conditional rendering to allow different renders depending on who is on the session
+- Conditional rendering on image buttons to allow for different images to be used and different classes
+- Utilising Firebase as a chat host and conditional rendering to make a dynamic chat (active users messages on the right)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Challenges
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Chat based functionality using WebSockets
+- Deploying images with Django
 
-## Learn More
+## Future Features
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Email confirmation
+- Use GoogleAPI to use map location of the session
+- Allow users to see who has joined their session
+- Notifications when a user joins a session, and that chatroom is updated
