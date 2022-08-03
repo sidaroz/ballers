@@ -69,7 +69,7 @@ function Chatroom() {
 
   const handleSendMessage = async () => {
     const curMessage = {
-      messageId: nanoid(), //TODO: use any uuid generator (INSTALL NANOID!!!!!! and import)
+      messageId: nanoid(),
       username: userData.properUsername,
       message: message,
       timeStamp: `${("0" + new Date().getHours()).slice(-2)}:${(
@@ -82,8 +82,6 @@ function Chatroom() {
     const res = await reference2.add(curMessage);
     const sendBtn = document.querySelector(".msg-input");
     sendBtn.value = "";
-
-    //TODO: Add if message fails
   };
 
   useEffect(() => {
@@ -125,6 +123,7 @@ function Chatroom() {
         className="back-btn-logo"
         onClick={() => navigate(-1)}
       />
+      <p className="disclaimer">Do not share private information!</p>
       <div className="chat-box">
         <ul>
           {listOfMessages.map((item, i) =>
@@ -160,6 +159,7 @@ function Chatroom() {
           className="msg-input"
           onChange={handleMessageChange}
           placeholder="Message..."
+          id="message-holder"
         />
         <button className="send-msg-btn" onClick={handleSendMessage}>
           Send

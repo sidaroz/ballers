@@ -31,6 +31,11 @@
   min-width: 70%;
   padding-left: 5px;
 }
+.msg-input:focus {
+  border: none;
+  border: 0px solid;
+  outline: none;
+}
 
 li.left-side-chat {
   list-style: none;
@@ -126,6 +131,10 @@ p.chat-para-left {
   margin-top: 13px;
   margin-left: 15px;
   max-width: 20%;
+}
+
+.disclaimer {
+  text-align: center;
 }
 
 @media only screen and (min-width: 400px) {
